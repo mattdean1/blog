@@ -1,19 +1,17 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
-import Helmet from 'react-helmet';
-
-import '../css/typography.css';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Link from 'gatsby-link'
+import Helmet from 'react-helmet'
 
 export default class Template extends React.Component {
   static propTypes = {
     children: PropTypes.func,
-  };
+  }
 
   render() {
-    const { location } = this.props;
+    const { location } = this.props
 
-    const isRoot = location.pathname === '/';
+    const isRoot = location.pathname === '/'
 
     return (
       <div>
@@ -61,6 +59,6 @@ export default class Template extends React.Component {
           {this.props.children()}
         </div>
       </div>
-    );
+    )
   }
 }

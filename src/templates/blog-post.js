@@ -1,44 +1,39 @@
-import React from 'react';
-import Helmet from 'react-helmet';
-import BackIcon from 'react-icons/lib/fa/chevron-left';
-import ForwardIcon from 'react-icons/lib/fa/chevron-right';
+import React from 'react'
+import Helmet from 'react-helmet'
+import BackIcon from 'react-icons/lib/fa/chevron-left'
+import ForwardIcon from 'react-icons/lib/fa/chevron-right'
 
-import Link from '../components/Link';
-import Tags from '../components/tags';
-
-import '../css/blog-post.css';
+import Link from '../components/Link'
+import Tags from '../components/Tags'
 
 export default function Template({ data, pathContext }) {
-  const { markdownRemark: post } = data;
-  const { next, prev } = pathContext;
+  const { markdownRemark: post } = data
+  const { next, prev } = pathContext
   return (
-    <div className="blog-post-container">
+    <div>
       <Helmet title={`Gatsby Blog - ${post.frontmatter.title}`} />
-      <div className="blog-post">
-        <h1 className="title">
+      <div>
+        <h1>
           {post.frontmatter.title}
         </h1>
-        <h2 className="date">
+        <h2>
           {post.frontmatter.date}
         </h2>
-        <div
-          className="blog-post-content"
-          dangerouslySetInnerHTML={{ __html: post.html }}
-        />
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <Tags list={post.frontmatter.tags || []} />
-        <div className="navigation">
+        <div>
           {prev &&
-            <Link className="link prev" to={prev.frontmatter.path}>
+            <Link to={prev.frontmatter.path}>
               <BackIcon /> {prev.frontmatter.title}
             </Link>}
           {next &&
-            <Link className="link next" to={next.frontmatter.path}>
+            <Link to={next.frontmatter.path}>
               {next.frontmatter.title} <ForwardIcon />
             </Link>}
         </div>
       </div>
     </div>
-  );
+  )
 }
 
 export const pageQuery = graphql`
@@ -53,4 +48,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

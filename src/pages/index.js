@@ -1,13 +1,11 @@
-import React from 'react';
-import GatsbyLink from 'gatsby-link';
-import Helmet from 'react-helmet';
+import React from 'react'
+import GatsbyLink from 'gatsby-link'
+import Helmet from 'react-helmet'
 
-import Link from '../components/Link';
-
-import '../css/index.css';
+import Link from '../components/Link'
 
 export default function Index({ data }) {
-  const { edges: posts } = data.allMarkdownRemark;
+  const { edges: posts } = data.allMarkdownRemark
 
   return (
     <div className="blog-posts">
@@ -28,7 +26,7 @@ export default function Index({ data }) {
         </div>),
       )}
     </div>
-  );
+  )
 }
 
 export const pageQuery = graphql`
@@ -47,4 +45,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`;
+`

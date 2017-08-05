@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    author: 'You!',
-    title: `Gatsby Default (Blog) Starter`,
+    author: 'Matt Dean',
+    title: 'Some Posts by Matt Dean',
   },
   plugins: [
     'gatsby-plugin-catch-links',
@@ -19,13 +19,19 @@ module.exports = {
           {
             resolve: 'gatsby-remark-images',
             options: {
-              linkImagesToOriginal: false
-            }
-          }
-        ]
-      }
+              linkImagesToOriginal: false,
+            },
+          },
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: 'src/utils/typography-config.js',
+      },
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp'
+    'gatsby-plugin-sharp',
   ],
 }

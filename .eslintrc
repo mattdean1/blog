@@ -1,8 +1,7 @@
 {
   "extends": "airbnb",
   "rules": {
-    "no-console": 0,
-    "semi": 2,
+    "semi": ["error", "never"],
     "jsx-a11y/href-no-hash": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }]
   },
