@@ -1,28 +1,28 @@
 import React from 'react'
 import GatsbyLink from 'gatsby-link'
-import Helmet from 'react-helmet'
-
-import Link from '../components/Link'
 
 export default function Index({ data }) {
   const { edges: posts } = data.allMarkdownRemark
 
   return (
-    <div className="blog-posts">
+    <div>
       {posts.filter(post => post.node.frontmatter.title.length > 0).map(({ node: post }) =>
-        (<div className="blog-post-preview" key={post.id}>
-          <h1 className="title">
+        (<div key={post.id}>
+          <h1>
             <GatsbyLink to={post.frontmatter.path}>
               {post.frontmatter.title}
             </GatsbyLink>
           </h1>
-          <h2 className="date">
+          <span>
             {post.frontmatter.date}
-          </h2>
+          </span>
+          <span>
+            {'  '}
+            {post.timeToRead} minute read
+          </span>
           <p>
-            {post.excerpt}
+            {post.frontmatter.summary}
           </p>
-          <Link to={post.frontmatter.path}>Read more</Link>
         </div>),
       )}
     </div>
@@ -34,13 +34,14 @@ export const pageQuery = graphql`
     allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }) {
       edges {
         node {
-          excerpt(pruneLength: 250)
           id
           frontmatter {
             title
             date(formatString: "MMMM DD, YYYY")
             path
+            summary
           }
+          timeToRead
         }
       }
     }

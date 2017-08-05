@@ -48,7 +48,6 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     ) {
       edges {
         node {
-          excerpt(pruneLength: 250)
           html
           id
           timeToRead
@@ -57,6 +56,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
             path
             tags
             title
+            summary
           }
         }
       }

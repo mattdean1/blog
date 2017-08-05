@@ -3,7 +3,7 @@ import Link from 'gatsby-link'
 
 export default function Tags({ list = [] }) {
   return (
-    <ul className="tag-list">
+    <ul>
       {list.map(tag =>
         (<li key={tag}>
           <Link to={`/tags/${tag}`}>
