@@ -1,0 +1,41 @@
+{
+  "name": "mattdean1",
+  "description": "My personal blog",
+  "version": "1.0.0",
+  "author": "Matt Dean mattdean001@gmail.com>",
+  "dependencies": {
+    "gatsby": "~1.0.5",
+    "gatsby-link": "~1.0.1",
+    "gatsby-plugin-catch-links": "~1.0.1",
+    "gatsby-plugin-react-helmet": "~1.0.1",
+    "gatsby-plugin-sharp": "~1.0.1",
+    "gatsby-remark-images": "~1.2.0",
+    "gatsby-source-filesystem": "~1.0.1",
+    "gatsby-transformer-remark": "~1.1.0",
+    "react": "^15.6.1",
+    "react-helmet": "^5.1.3",
+    "react-icons": "~2.2.5"
+  },
+  "devDependencies": {
+    "eslint": "^4.3.0",
+    "eslint-config-airbnb": "^15.1.0",
+    "eslint-plugin-import": "^2.7.0",
+    "eslint-plugin-jsx-a11y": "^5.1.1",
+    "eslint-plugin-react": "^7.1.0",
+    "gh-pages": "~0.12.0",
+    "prettier": "~1.5.3"
+  },
+  "keywords": ["gatsby"],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "develop": "gatsby develop",
+    "preserve": "npm run build",
+    "serve": "gatsby serve",
+    "start": "npm run develop",
+    "format": "prettier --trailing-comma es5 --single-quote --write \"src/**/*.js\"",
+    "test": "echo \"Should probably write some tests!\""
+  }
+}
