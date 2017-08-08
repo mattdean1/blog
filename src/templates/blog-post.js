@@ -5,6 +5,7 @@ import ForwardIcon from 'react-icons/lib/fa/chevron-right'
 
 import Link from '../components/Link'
 import Tags from '../components/Tags'
+import HeroImage from '../components/HeroImage'
 
 export default function Template({ data, pathContext }) {
   const { markdownRemark: post } = data
@@ -13,6 +14,7 @@ export default function Template({ data, pathContext }) {
     <div>
       <Helmet title={`Gatsby Blog - ${post.frontmatter.title}`} />
       <div>
+        <HeroImage imgData={data.heroImage.responsiveSizes} />
         <h1>
           {post.frontmatter.title}
         </h1>
@@ -37,7 +39,7 @@ export default function Template({ data, pathContext }) {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!) {
+  query BlogPostByPath($path: String!, $heroImageFilePath: String) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
@@ -45,6 +47,15 @@ export const pageQuery = graphql`
         path
         tags
         title
+      }
+    }
+    heroImage: imageSharp(id: { regex: $heroImageFilePath }) {
+      responsiveSizes {
+        aspectRatio
+        base64
+        src
+        srcSet
+        sizes
       }
     }
   }

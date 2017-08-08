@@ -4,7 +4,6 @@ module.exports = {
     title: 'Some Posts by Matt Dean',
   },
   plugins: [
-    'gatsby-plugin-catch-links',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
@@ -25,6 +24,7 @@ module.exports = {
         ],
       },
     },
+    'gatsby-transformer-sharp',
     {
       resolve: 'gatsby-plugin-typography',
       options: {
@@ -32,6 +32,6 @@ module.exports = {
       },
     },
     'gatsby-plugin-react-helmet',
-    'gatsby-plugin-sharp',
+    'gatsby-plugin-catch-links',
   ],
 }

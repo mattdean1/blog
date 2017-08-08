@@ -39,8 +39,8 @@ const createTagPages = (createPage, edges) => {
 
 exports.createPages = ({ boundActionCreators, graphql }) => {
   const { createPage } = boundActionCreators
-
   const blogPostTemplate = path.resolve('src/templates/blog-post.js')
+
   return graphql(`{
     allMarkdownRemark(
       sort: { order: DESC, fields: [frontmatter___date] }
@@ -50,6 +50,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
         node {
           html
           id
+          fileAbsolutePath
           timeToRead
           frontmatter {
             date
@@ -76,6 +77,7 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
       const next = index === posts.length - 1 ? false : posts[index + 1].node
       createPage({
         path: node.frontmatter.path,
+        heroImageFilePath: node.fileAbsolutePath.replace('index.md', 'header'),
         component: blogPostTemplate,
         context: {
           prev,
