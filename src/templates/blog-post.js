@@ -14,7 +14,7 @@ export default function Template({ data, pathContext }) {
     <div>
       <Helmet title={`Gatsby Blog - ${post.frontmatter.title}`} />
       <div>
-        <HeroImage imgData={data.heroImage.responsiveSizes} />
+        {data.heroImage ? <HeroImage imgData={data.heroImage.responsiveSizes} /> : null}
         <h1>
           {post.frontmatter.title}
         </h1>
@@ -39,7 +39,7 @@ export default function Template({ data, pathContext }) {
 }
 
 export const pageQuery = graphql`
-  query BlogPostByPath($path: String!, $heroImageFilePath: String) {
+  query BlogPostByPath($path: String!, $heroImageFilePath: String!) {
     markdownRemark(frontmatter: { path: { eq: $path } }) {
       html
       frontmatter {
