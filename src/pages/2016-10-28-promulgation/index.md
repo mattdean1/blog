@@ -2,7 +2,7 @@
 path: "/promulgation"
 date: "2016-10-28T23:17:39Z"
 title: "Promulgation"
-tags: ["react", "gatsby", "static site"]
+tags: ["react", "gatsby", "static site", "meta"]
 summary: "Why I decided to create a blog and how I set it up"
 ---
 

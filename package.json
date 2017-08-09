@@ -2,7 +2,8 @@
   "name": "mattdean1",
   "description": "My personal blog",
   "version": "1.0.0",
-  "author": "Matt Dean mattdean001@gmail.com>",
+  "author": "Matt Dean <mattdean001@gmail.com>",
+  "repository": "https://github.com/mattdean1/mattdean1.github.io",
   "dependencies": {
     "gatsby": "~1.0.5",
     "gatsby-link": "~1.0.1",
@@ -11,9 +12,11 @@
     "gatsby-plugin-sharp": "^1.0.1",
     "gatsby-plugin-typography": "^1.7.2",
     "gatsby-remark-images": "~1.2.0",
+    "gatsby-remark-prismjs": "^1.2.0",
     "gatsby-source-filesystem": "~1.0.1",
     "gatsby-transformer-remark": "~1.1.0",
     "gatsby-transformer-sharp": "^1.6.0",
+    "prismjs": "^1.6.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
     "react-helmet": "^5.1.3",
@@ -29,9 +32,7 @@
     "eslint-plugin-react": "^7.1.0",
     "prettier": "~1.5.3"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
