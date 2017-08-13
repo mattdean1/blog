@@ -17,7 +17,7 @@ export default function Index({ data }) {
             {post.frontmatter.date}
           </span>
           <span>
-            {'  '}
+            {' - '}
             {post.timeToRead} minute read
           </span>
           <p>

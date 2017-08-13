@@ -12,7 +12,7 @@ export default function Template({ data, pathContext }) {
   const { next, prev } = pathContext
   return (
     <div>
-      <Helmet title={`Gatsby Blog - ${post.frontmatter.title}`} />
+      <Helmet title={`${post.frontmatter.title} · Some Posts`} />
       <div>
         {data.heroImage ? <HeroImage imgData={data.heroImage.responsiveSizes} /> : null}
         <h1>
@@ -28,6 +28,7 @@ export default function Template({ data, pathContext }) {
             <Link to={prev.frontmatter.path}>
               <BackIcon /> {prev.frontmatter.title}
             </Link>}
+          {' - '}
           {next &&
             <Link to={next.frontmatter.path}>
               {next.frontmatter.title} <ForwardIcon />
