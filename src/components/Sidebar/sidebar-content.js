@@ -12,7 +12,7 @@ export default (
   >
     <h1 style={{ marginBottom: 0, color: 'white' }}> Some Posts </h1>
     <h3 style={{ marginTop: 0, color: 'white' }}> by Matt Dean </h3>
-    <ul>
+    <ul style={{ listStyle: 'none' }}>
       <li style={{}}>
         <a style={{ color: 'white' }} href="/">
           Blog
