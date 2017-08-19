@@ -75,11 +75,11 @@ exports.createPages = ({ boundActionCreators, graphql }) => {
     posts.forEach(({ node }, index) => {
       const prev = index === 0 ? false : posts[index - 1].node
       const next = index === posts.length - 1 ? false : posts[index + 1].node
-      const heroImageFilePath = node.fileAbsolutePath.replace('index.md', 'hero/')
+      const responsiveImageFilePath = node.fileAbsolutePath.replace('index.md', 'hero/')
       createPage({
         path: node.frontmatter.path,
         component: blogPostTemplate,
-        heroImageFilePath,
+        responsiveImageFilePath,
         context: {
           prev,
           next,

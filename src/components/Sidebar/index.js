@@ -3,46 +3,46 @@ import ReactSidebar from 'react-sidebar'
 
 import sidebarContent from './sidebar-content'
 
-const mql = window.matchMedia('(min-width: 800px)')
+const mediaQueryListener = window.matchMedia('(min-width: 800px)')
 
 export default class Sidebar extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      mql,
+      mediaQueryListener,
       docked: true,
       open: true,
     }
 
     this.mediaQueryChanged = this.mediaQueryChanged.bind(this)
-    this.onSetSidebarOpen = this.onSetSidebarOpen.bind(this)
+    this.onSetopen = this.onSetopen.bind(this)
   }
 
   componentWillMount() {
-    mql.addListener(this.mediaQueryChanged)
-    this.setState({ mql, sidebarDocked: mql.matches })
+    mediaQueryListener.addListener(this.mediaQueryChanged)
+    this.setState({ mediaQueryListener, docked: mediaQueryListener.matches })
   }
 
   componentWillUnmount() {
-    this.state.mql.removeListener(this.mediaQueryChanged)
+    this.state.mediaQueryListener.removeListener(this.mediaQueryChanged)
   }
 
-  onSetSidebarOpen(open) {
-    this.setState({ sidebarOpen: open })
+  onSetopen(open) {
+    this.setState({ open })
   }
 
   mediaQueryChanged() {
-    this.setState({ sidebarDocked: this.state.mql.matches })
+    this.setState({ docked: this.state.mediaQueryListener.matches })
   }
 
   render() {
     return (
       <ReactSidebar
         sidebar={sidebarContent}
-        open={this.state.sidebarOpen}
-        docked={this.state.sidebarDocked}
-        onSetOpen={this.onSetSidebarOpen}
+        open={this.state.open}
+        docked={this.state.docked}
+        onSetOpen={this.onSetopen}
       >
         {this.props.children}
       </ReactSidebar>

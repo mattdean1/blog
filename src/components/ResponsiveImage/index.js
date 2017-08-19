@@ -2,12 +2,13 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 /*
-  Import styles as js rather than e.g. css-modules because they must be available on first render,
+  Import styles as js object rather than e.g. css-modules
+  because they must be available on first render,
   not only after css file is fetched
 */
 import styles from './styles'
 
-export default class HeroImage extends React.Component {
+export default class ResponsiveImage extends React.Component {
   constructor(props) {
     super(props)
 
@@ -57,7 +58,7 @@ export default class HeroImage extends React.Component {
   }
 }
 
-HeroImage.propTypes = {
+ResponsiveImage.propTypes = {
   imgData: PropTypes.shape({
     aspectRatio: PropTypes.number.isRequired,
     base64: PropTypes.string.isRequired,

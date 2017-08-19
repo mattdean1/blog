@@ -1,20 +1,10 @@
 import React from 'react'
-import GatsbyLink from 'gatsby-link'
 
-import HeroImage from '../components/HeroImage'
+import PostListing from '../components/PostListing'
 
 const removeDraftPosts = (post) => {
   const frontmatter = post.node.frontmatter
   return frontmatter.draft !== 'true' && frontmatter.title.length > 0
-}
-
-const getHeroImage = (post, images) => {
-  const imagePathRegex = post.fileAbsolutePath.replace('index.md', 'hero')
-  const filteredImages = images.filter(image => image.node.id.match(imagePathRegex))
-  if (filteredImages.length > 0) {
-    return filteredImages[0].node.responsiveSizes
-  }
-  return false
 }
 
 export default function Index({ data }) {
@@ -23,33 +13,9 @@ export default function Index({ data }) {
 
   return (
     <div>
-      {posts.filter(removeDraftPosts).map(({ node: post }) => {
-        const heroImageData = getHeroImage(post, images)
-        return (
-          <div key={post.id}>
-            <div style={{ width: '200px', display: 'inline-block' }}>
-              {heroImageData && <HeroImage imgData={heroImageData} />}
-            </div>
-            <div style={{ display: 'inline-block', marginLeft: '15px' }}>
-              <h1>
-                <GatsbyLink to={post.frontmatter.path}>
-                  {post.frontmatter.title}
-                </GatsbyLink>
-              </h1>
-              <span>
-                {post.frontmatter.date}
-              </span>
-              <span>
-                {' - '}
-                {post.timeToRead} minute read
-              </span>
-              <p>
-                {post.frontmatter.summary}
-              </p>
-            </div>
-          </div>
-        )
-      })}
+      {posts
+        .filter(removeDraftPosts)
+        .map(({ node: post }) => <PostListing post={post} images={images} />)}
     </div>
   )
 }
