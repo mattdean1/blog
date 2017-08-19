@@ -3,8 +3,7 @@ import PropTypes from 'prop-types'
 
 /*
   Import styles as js object rather than e.g. css-modules
-  because they must be available on first render,
-  not only after css file is fetched
+  so we can combine them dynamically
 */
 import styles from './styles'
 

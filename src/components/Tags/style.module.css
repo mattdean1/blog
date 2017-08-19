@@ -1,0 +1,16 @@
+.tag {
+  padding: 5px;
+  margin: 3px;
+  border: 1px solid gray;
+  border-radius: 3px;
+  color: gray;
+  transition: color 1s, border 1s;
+}
+.tag li {
+  display: inline;
+}
+.tag:hover {
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+}

@@ -1,5 +1,5 @@
 import React from 'react'
-import GatsbyLink from 'gatsby-link'
+import Link from 'gatsby-link'
 import PropTypes from 'prop-types'
 
 import ResponsiveImage from '../ResponsiveImage'
@@ -19,12 +19,12 @@ export default function PostListing(props) {
   const responsiveImageData = getPostImage(post, images)
   return (
     <div className={styles.grid}>
-      <GatsbyLink to={post.frontmatter.path}>
+      <Link to={post.frontmatter.path}>
         <div className={styles.image}>
           {responsiveImageData && <ResponsiveImage imgData={responsiveImageData} />}
         </div>
-      </GatsbyLink>
-      <GatsbyLink to={post.frontmatter.path}>
+      </Link>
+      <Link to={post.frontmatter.path}>
         <h2 className={styles.title}>
           {post.frontmatter.title}
         </h2>
@@ -36,7 +36,7 @@ export default function PostListing(props) {
         <p>
           {post.frontmatter.summary}
         </p>
-      </GatsbyLink>
+      </Link>
     </div>
   )
 }

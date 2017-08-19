@@ -1,5 +1,5 @@
 import React from 'react'
-import GatsbyLink from 'gatsby-link'
+import Link from 'gatsby-link'
 import GithubIcon from 'react-icons/lib/fa/github'
 import TwitterIcon from 'react-icons/lib/fa/twitter'
 import LinkedinIcon from 'react-icons/lib/fa/linkedin'
@@ -20,9 +20,9 @@ export default (
           </a>
         </li>
         <li>
-          <GatsbyLink to={'/'} className={styles.link}>
+          <Link to={'/'} className={styles.link}>
             <h3>Blog</h3>
-          </GatsbyLink>
+          </Link>
         </li>
         <li className={styles.link}>
           <a href="https://github.com/mattdean1">

@@ -1,9 +1,8 @@
 import React from 'react'
-import GatsbyLink from 'gatsby-link'
+import Link from 'gatsby-link'
+
 import HomeIcon from 'react-icons/lib/fa/home'
 import TagsIcon from 'react-icons/lib/fa/tags'
-
-import Link from '../components/Link'
 
 export default function Tags({ pathContext }) {
   const { posts, post, tag } = pathContext
@@ -11,21 +10,21 @@ export default function Tags({ pathContext }) {
     return (
       <div>
         <h1>
-          {post.length} post{post.length === 1 ? '' : 's'} tagged with {tag}
+          {post.length} post{post.length === 1 ? '' : 's'} tagged with '{tag}'
         </h1>
-        <ul>
-          {post.map(({ id, frontmatter, excerpt }) => (
-            <li key={id}>
+        <ul style={{ listStyle: 'none' }}>
+          {post.map(({ id, frontmatter }) =>
+            (<li key={id}>
               <h1>
-                <GatsbyLink to={frontmatter.path}>
+                <Link to={frontmatter.path}>
                   {frontmatter.title}
-                </GatsbyLink>
+                </Link>
               </h1>
               <p>
-                {excerpt}
+                {frontmatter.summary}
               </p>
-            </li>
-          ))}
+            </li>),
+          )}
         </ul>
         <Link to="/tags">
           <TagsIcon /> All tags
@@ -36,17 +35,14 @@ export default function Tags({ pathContext }) {
   return (
     <div>
       <h1>Tags</h1>
-      <ul className="tags">
-        {Object.keys(posts).map((tagName) => {
-          const tags = posts[tagName]
-          return (
-            <li key={tagName}>
-              <GatsbyLink to={`/tags/${tagName}`}>
-                {tagName}
-              </GatsbyLink>
-            </li>
-          )
-        })}
+      <ul style={{ listStyle: 'none' }}>
+        {Object.keys(posts).sort().map(tagName => (
+          <li key={tagName}>
+            <Link to={`/tags/${tagName}`}>
+              {tagName}
+            </Link>
+          </li>
+        ))}
       </ul>
       <Link to="/">
         <HomeIcon /> All posts
