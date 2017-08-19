@@ -14,7 +14,9 @@ export default function Template({ data, pathContext }) {
     <div>
       <Helmet title={`${post.frontmatter.title} · Some Posts`} />
       <div>
-        {data.responsiveImage ? <ResponsiveImage imgData={data.responsiveImage.responsiveSizes} /> : null}
+        {data.responsiveImage
+          ? <ResponsiveImage imgData={data.responsiveImage.responsiveSizes} />
+          : null}
         <h1>
           {post.frontmatter.title}
         </h1>

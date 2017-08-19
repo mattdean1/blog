@@ -1,0 +1,32 @@
+.grid a,
+.grid a:hover {
+  color: black;
+  text-decoration: none;
+}
+.image {
+  display: none;
+}
+.title {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.date {
+  margin-bottom: 0.75em;
+}
+
+@media (min-width: 600px) {
+  .grid {
+    grid-template-columns: 2fr 3fr;
+    display: grid;
+    grid-column-gap: 20px;
+  }
+  .image {
+    display: inline;
+  }
+}
+
+@media (min-width: 1050px) {
+  .title {
+    margin-top: 0.2em;
+  }
+}

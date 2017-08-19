@@ -3,16 +3,13 @@ import ReactSidebar from 'react-sidebar'
 
 import sidebarContent from './sidebar-content'
 
-const mediaQueryListener = window.matchMedia('(min-width: 800px)')
-
 export default class Sidebar extends React.Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      mediaQueryListener,
       docked: true,
-      open: true,
+      open: false,
     }
 
     this.mediaQueryChanged = this.mediaQueryChanged.bind(this)
@@ -20,8 +17,12 @@ export default class Sidebar extends React.Component {
   }
 
   componentWillMount() {
-    mediaQueryListener.addListener(this.mediaQueryChanged)
-    this.setState({ mediaQueryListener, docked: mediaQueryListener.matches })
+    let mediaQueryListener
+    if (typeof window !== 'undefined') {
+      mediaQueryListener = window.matchMedia('(min-width: 800px)')
+      mediaQueryListener.addListener(this.mediaQueryChanged)
+      this.setState({ mediaQueryListener, docked: mediaQueryListener.matches })
+    }
   }
 
   componentWillUnmount() {

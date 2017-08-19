@@ -1,0 +1,34 @@
+.background {
+  text-align: right;
+  background-color: #2d303b;
+  height: 100%;
+  overflow: hidden;
+  padding: 20px;
+  width: 260px;
+}
+
+.title,
+.subtitle {
+  margin-bottom: 0;
+  color: white;
+}
+
+.subtitle {
+  margin-top: 0;
+  margin-bottom: 50px;
+}
+
+.list {
+  list-style: none;
+}
+
+.link,
+.link h3 {
+  color: white;
+  margin-top: 0;
+  font-weight: 100;
+}
+
+.link:hover {
+  text-decoration: none;
+}

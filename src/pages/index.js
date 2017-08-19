@@ -15,7 +15,7 @@ export default function Index({ data }) {
     <div>
       {posts
         .filter(removeDraftPosts)
-        .map(({ node: post }) => <PostListing post={post} images={images} />)}
+        .map(({ node: post }) => <PostListing key={post.id} post={post} images={images} />)}
     </div>
   )
 }
@@ -32,7 +32,6 @@ export const pageQuery = graphql`
             path
             summary
           }
-          timeToRead
           fileAbsolutePath
         }
       }

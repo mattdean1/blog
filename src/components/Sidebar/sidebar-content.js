@@ -1,31 +1,26 @@
 import React from 'react'
+import GatsbyLink from 'gatsby-link'
+
+import styles from './style.module.css'
 
 export default (
-  <div
-    style={{
-      textAlign: 'right',
-      backgroundColor: '#2d303b',
-      height: '100%',
-      overflow: 'hidden',
-      padding: '20px',
-    }}
-  >
-    <h1 style={{ marginBottom: 0, color: 'white' }}> Some Posts </h1>
-    <h3 style={{ marginTop: 0, color: 'white' }}> by Matt Dean </h3>
-    <ul style={{ listStyle: 'none' }}>
-      <li style={{}}>
-        <a style={{ color: 'white' }} href="/">
-          Blog
+  <div className={styles.background}>
+    <h1 className={styles.title}> Some Posts </h1>
+    <h4 className={styles.subtitle}> by Matt Dean </h4>
+    <ul className={styles.list}>
+      <li>
+        <GatsbyLink to={'/'} className={styles.link}>
+          <h3>Blog</h3>
+        </GatsbyLink>
+      </li>
+      <li>
+        <a className={styles.link} href="https://www.linkedin.com/in/deanmatt/">
+          <h3>About</h3>
         </a>
       </li>
       <li>
-        <a style={{ color: 'white' }} href="https://www.linkedin.com/in/deanmatt/">
-          About
-        </a>
-      </li>
-      <li>
-        <a style={{ color: 'white' }} href="https://github.com/mattdean1">
-          Portfolio
+        <a className={styles.link} href="https://github.com/mattdean1">
+          <h3>Portfolio</h3>
         </a>
       </li>
     </ul>
