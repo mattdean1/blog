@@ -53,7 +53,7 @@ One of the main drawbacks of MVP1 was the page load time, since we fetched data 
 
 -   Since I'm most familiar with Node, I wrote a short cron job using [node-cron](https://www.npmjs.com/package/node-cron), which regularly copied the OpenShift API responses verbatim into redis. Of course I had to edit our backend to consume the cache instead of getting data from OpenShift directly, using [redis-py](https://github.com/andymccurdy/redis-py).
 -   This sped up page load times a fair bit, but the data parsing step was still happening on every refresh, since only the raw OpenShift API responses were in redis, not the collated data. So, I added to my cron job - I stored *our* Django API responses in redis too. After editing the backend again to retrieve the *parsed data* from redis where possible, this meant page load times were considerably decreased.
--   The one 'gotcha' here is that if our API returned it's values from the redis cache, how would we update the cache with new values? I set the redis expiry time to be a little lower than the cron frequency, which meant that new results would be computed every time the cron job ran.
+-   The one 'gotcha' here is that if our API returned its values from the redis cache, how would we update the cache with new values? I set the redis expiry time to be a little lower than the cron frequency, which meant that new results would be computed every time the cron job ran.
 -   Of course, if redis was down, would that bring down our entire API? No, because if a key did not exist (it had expired or redis was down), I would fall back to parsing the data and/or getting data directly from OpenShift.
 
 

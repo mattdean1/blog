@@ -20,7 +20,7 @@ The key issue was the lack of flexibility - Salesforce is a useful platform, and
 
 ## Choosing the platform
 
-Node.js on Heroku seemed like a good choice of language and platform due to it's plethora of packages (allowing applicants to add complex functionality quickly), wide usage within Lilly (giving us expertise to lean on for judging), and easy integration with other free tools like GitHub.
+Node.js on Heroku seemed like a good choice of language and platform due to its plethora of packages (allowing applicants to add complex functionality quickly), wide usage within Lilly (giving us expertise to lean on for judging), and easy integration with other free tools like GitHub.
 
 A number of tasks had to be completed before offering this application stream to the next set of applicants:
 

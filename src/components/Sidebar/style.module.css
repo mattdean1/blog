@@ -1,5 +1,5 @@
 .background {
-  text-align: right;
+  text-align: center;
   background-color: #2d303b;
   height: 100%;
   overflow: hidden;
@@ -7,28 +7,51 @@
   width: 260px;
 }
 
+.section::after {
+  content: "";
+  border-bottom: 1px solid rgba(255, 255, 255, 0.7);
+  width: 150px;
+  display: inline-block;
+  margin-top: 2.5em;
+  margin-bottom: 2em;
+}
+.section:last-of-type::after {
+  border-bottom: 0;
+}
+
 .title,
 .subtitle {
   margin-bottom: 0;
   color: white;
 }
-
 .subtitle {
   margin-top: 0;
-  margin-bottom: 50px;
+  text-align: right;
+  font-weight: 400;
 }
 
-.list {
+.linkList {
   list-style: none;
+  text-align: center;
+  margin: 0;
 }
-
-.link,
+.link a,
 .link h3 {
   color: white;
   margin-top: 0;
-  font-weight: 100;
+  font-weight: 400;
 }
-
 .link:hover {
   text-decoration: none;
+}
+.link:last-of-type {
+  margin-bottom: 0;
+}
+
+.icons {
+  text-align: center;
+}
+.icon {
+  color: white;
+  margin: 0 5px;
 }
