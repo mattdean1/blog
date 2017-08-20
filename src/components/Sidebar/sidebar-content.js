@@ -9,8 +9,10 @@ import styles from './style.module.css'
 export default (
   <div className={styles.background}>
     <section className={styles.section}>
-      <h1 className={styles.title}> Some Posts </h1>
-      <h4 className={styles.subtitle}> by Matt Dean </h4>
+      <Link to={'/'}>
+        <h1 className={styles.title}> Some Posts </h1>
+        <h4 className={styles.subtitle}> by Matt Dean </h4>
+      </Link>
     </section>
     <section className={styles.section}>
       <ul className={styles.linkList}>

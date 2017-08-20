@@ -18,6 +18,9 @@
 .section:last-of-type::after {
   border-bottom: 0;
 }
+.section a:hover {
+  text-decoration: none;
+}
 
 .title,
 .subtitle {

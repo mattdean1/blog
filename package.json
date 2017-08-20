@@ -40,8 +40,8 @@
   "main": "n/a",
   "scripts": {
     "build": "gatsby build",
-    "clean": "rimraf .cache public",
-    "deploy": "npm run clean && gatsby build --prefix-paths && gh-pages -d public -b master",
+    "clean": "rm -rf .cache public",
+    "deploy": "npm run clean && gatsby build && gh-pages -d public -b master",
     "develop": "gatsby develop",
     "preserve": "npm run build",
     "serve": "gatsby serve",
