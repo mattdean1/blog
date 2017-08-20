@@ -23,6 +23,6 @@ export default function PostPrevNext(props) {
 }
 
 PostPrevNext.propTypes = {
-  prev: PropTypes.object,
-  next: PropTypes.object,
+  prev: PropTypes.oneOf([PropTypes.object, PropTypes.bool]).isRequired,
+  next: PropTypes.oneOf([PropTypes.object, PropTypes.bool]).isRequired,
 }
