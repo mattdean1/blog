@@ -3,6 +3,7 @@ module.exports = {
     author: 'Matt Dean',
     title: 'Some Posts by Matt Dean',
   },
+  pathPrefix: '/blog',
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
