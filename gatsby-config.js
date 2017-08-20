@@ -3,6 +3,7 @@ module.exports = {
     author: 'Matt Dean',
     title: 'Some Posts by Matt Dean',
   },
+  pathPrefix: '/blog',
   plugins: [
     {
       resolve: 'gatsby-source-filesystem',
@@ -31,6 +32,12 @@ module.exports = {
       },
     },
     'gatsby-transformer-sharp',
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-104915018-1',
+      },
+    },
     {
       resolve: 'gatsby-plugin-typography',
       options: {
