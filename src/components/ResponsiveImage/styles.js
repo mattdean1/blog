@@ -1,6 +1,7 @@
 export default {
   wrapper: {
     margin: '0 auto',
+    display: 'block',
   },
   backgroundImage: {
     backgroundSize: 'cover',

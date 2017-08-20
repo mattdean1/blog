@@ -6,7 +6,7 @@ import styles from './style.module.css'
 
 export default function Tags({ list = [] }) {
   return (
-    <ul>
+    <ul className={styles.list}>
       {list.map(tag =>
         (<Link className={styles.tag} to={`/tags/${tag}`} key={tag}>
           <li>

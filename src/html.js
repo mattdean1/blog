@@ -12,7 +12,7 @@ export default function HTML(props) {
         <link rel="icon" type="image/png" sizes="32x32" href="/blog/favicons/favicon-32x32.png" />
         <link rel="icon" type="image/png" sizes="16x16" href="/blog/favicons/favicon-16x16.png" />
         <link rel="manifest" href="/blog/favicons/manifest.json" />
-        <link rel="mask-icon" href="/blog/favicons/safari-pinned-tab.svg" color="#5bbad5" />
+        <link rel="mask-icon" href="/blog/favicons/safari-pinned-tab.svg" color="#000000" />
         <link rel="shortcut icon" href="/blog/favicons/favicon.ico" />
         {props.headComponents}
       </head>
