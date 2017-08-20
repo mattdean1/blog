@@ -4,6 +4,7 @@ import Helmet from 'react-helmet'
 import Tags from '../components/Tags'
 import ResponsiveImage from '../components/ResponsiveImage'
 import PrevNext from '../components/PostPrevNext'
+import PostTitle from '../components/PostTitle'
 
 import styles from './blog-post.module.css'
 
@@ -18,24 +19,7 @@ export default function Template({ data, pathContext }) {
           ? <ResponsiveImage imgData={data.responsiveImage.responsiveSizes} />
           : null}
 
-        <div className={styles.title}>
-          <div>
-            <h1>
-              {post.frontmatter.title}
-            </h1>
-          </div>
-          <p className={styles.subtitle}>
-            <i>
-              {post.frontmatter.date}
-            </i>
-          </p>
-          <span className={styles.subtitleSeparator}> - </span>
-          <p className={styles.subtitle}>
-            <i>
-              {post.timeToRead} minute read
-            </i>
-          </p>
-        </div>
+        <PostTitle post={post} />
 
         <div className={styles.post} dangerouslySetInnerHTML={{ __html: post.html }} />
         <div className={styles.tagWrapper}>
