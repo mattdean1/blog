@@ -1,0 +1,16 @@
+.wrapper {
+  background-color: #2d303b;
+  height: 3em;
+  display: block;
+}
+
+@media (min-width: 800px) {
+  .wrapper {
+    display: none;
+  }
+}
+
+.hamburger {
+  color: white;
+  margin: 0.5em;
+}

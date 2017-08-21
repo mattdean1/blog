@@ -4,7 +4,7 @@ import Helmet from 'react-helmet'
 import Tags from '../components/Tags'
 import ResponsiveImage from '../components/ResponsiveImage'
 import PrevNext from '../components/PostPrevNext'
-import PostTitle from '../components/PostTitle'
+import Title from '../components/PostTitle'
 
 import styles from './blog-post.module.css'
 
@@ -19,7 +19,7 @@ export default function Template({ data, pathContext }) {
           ? <ResponsiveImage imgData={data.responsiveImage.responsiveSizes} />
           : null}
 
-        <PostTitle post={post} />
+        <Title post={post} />
 
         <div className={styles.post} dangerouslySetInnerHTML={{ __html: post.html }} />
         <div className={styles.tagWrapper}>

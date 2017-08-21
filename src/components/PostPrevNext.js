@@ -21,8 +21,3 @@ export default function PostPrevNext(props) {
     </div>
   )
 }
-
-PostPrevNext.propTypes = {
-  prev: PropTypes.oneOf([PropTypes.object, PropTypes.bool]).isRequired,
-  next: PropTypes.oneOf([PropTypes.object, PropTypes.bool]).isRequired,
-}

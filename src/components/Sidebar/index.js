@@ -1,7 +1,9 @@
 import React from 'react'
 import ReactSidebar from 'react-sidebar'
 
-import sidebarContent from './sidebar-content'
+import Header from '../Header'
+import Content from './sidebar-content'
+import styles from './style.module.css'
 
 export default class Sidebar extends React.Component {
   constructor(props) {
@@ -13,7 +15,7 @@ export default class Sidebar extends React.Component {
     }
 
     this.mediaQueryChanged = this.mediaQueryChanged.bind(this)
-    this.onSetopen = this.onSetopen.bind(this)
+    this.toggleOpen = this.toggleOpen.bind(this)
   }
 
   componentWillMount() {
@@ -29,7 +31,7 @@ export default class Sidebar extends React.Component {
     this.state.mediaQueryListener.removeListener(this.mediaQueryChanged)
   }
 
-  onSetopen(open) {
+  toggleOpen(open) {
     this.setState({ open })
   }
 
@@ -40,12 +42,15 @@ export default class Sidebar extends React.Component {
   render() {
     return (
       <ReactSidebar
-        sidebar={sidebarContent}
+        sidebar={<Content toggleSidebar={this.toggleOpen} />}
         open={this.state.open}
         docked={this.state.docked}
-        onSetOpen={this.onSetopen}
+        onSetOpen={this.toggleOpen}
       >
-        {this.props.children}
+        <Header toggleSidebar={this.toggleOpen} />
+        <div className={styles['content-wrapper']}>
+          {this.props.children}
+        </div>
       </ReactSidebar>
     )
   }
