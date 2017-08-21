@@ -50,7 +50,7 @@ Thanks for reading!
 
 
 
-## Technical setup - Blog 1.0
+## Technical setup - Blog 0.1 - OUTDATED
 
 ### Static site generation
 
