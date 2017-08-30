@@ -42,7 +42,7 @@ Fortunately, the tech learning curve wasn't as steep initially - at least in the
 
 I was also blazing a trail with some of my work on OpenShift. A decent part of my role focuses on setting up this internal PaaS as a production service, so I was deploying apps, writing scripts, and integrating with databases - things that our customers wanted but no-one had attempted before. This was amazing fun, but did lead to some days of frustration when the environment was unstable.
 
-While a large part of my dayjob remained working on OpenShift, I quickly moved on to learn new web technologies and new platforms - check my post where I tell the story of [how I learned Node.js and ran a 90-minute webinar in one week]!
+While a large part of my dayjob remained working on OpenShift, I quickly moved on to learn new web technologies and new platforms - check my post where I tell the story of [how I learned Node.js and ran a 90-minute webinar in one week](/metamorphosis)!
 
 
 
